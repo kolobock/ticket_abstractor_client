@@ -1,19 +1,16 @@
-class JiraClient < Client
+class TicketAbstractorClient::JiraClient < TicketAbstractorClient::Client
   ##
   # Get jira issue by issue id
   #
   # == Parameters:
   # issue_key:
   #   issue id in jira
-  # includes:
-  #   can be either 'comments', 'customfields' or both; defaults to []
   #
   # == Example:
-  #   >> client.jira.get_issue 'IFS-123', ['comments']
+  #   >> client.jira.get_issue 'IFS-123'
   #   => { 'id' => 'IFS-123', 'description' => '...', ... }
-  def get_issue(issue_key, includes = [])
-    includes = [includes] unless includes.is_a? Array
-    get "ticket/jira/#{issue_key}", include: includes.to_json # TODO: includes
+  def get_issue(issue_key)
+    get "ticket/jira/#{issue_key}"
   end
 
   ##
@@ -60,12 +57,12 @@ class JiraClient < Client
     get 'jira/get_fields_by_project', project_key: project_key
   end
 
-  def create_ticket(opts = {})
-    post 'jira/create_ticket', opts: opts
+  def create_issue(opts = {}, *attachments)
+    post('jira/create_issue', { opts: opts }, attachments: attachments)
   end
 
-  def update_ticket(opts = {})
-    post 'jira/update_ticket', opts: opts
+  def update_issue(opts = {}, *attachments)
+    post('jira/update_issue', { opts: opts }, attachments: attachments)
   end
 
   def add_comment(issue_key, comment)

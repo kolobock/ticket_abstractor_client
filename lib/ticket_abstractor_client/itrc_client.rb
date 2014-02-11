@@ -1,4 +1,4 @@
-class ItrcClient < Client
+class TicketAbstractorClient::ItrcClient < TicketAbstractorClient::Client
   def list_apps(page = 1, per_page = 20)
     get 'itrc/list_apps', page: page, per_page: per_page
   end

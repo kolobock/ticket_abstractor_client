@@ -1,4 +1,7 @@
-require File.expand_path("../lib/ticket_abstractor_client/version", __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'ticket_abstractor_client/version'
 
 Gem::Specification.new do |s|
   s.name = 'ticket_abstractor_client'
@@ -10,8 +13,11 @@ Gem::Specification.new do |s|
   s.description = 'Get access to Jira and Brouha ticketing systems through the single service'
   s.license = 'MIT'
 
-  s.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "README.md"]
+  s.files = Dir["{lib}/**/*.rb", "LICENSE", "README.md"]
   s.require_path = 'lib'
+
+  s.add_development_dependency "bundler", "~> 1.3"
+  s.add_development_dependency "rake"
 
   s.add_dependency 'rest-client', '~> 1.6.7'
 end
