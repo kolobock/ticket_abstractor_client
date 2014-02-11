@@ -15,6 +15,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install ticket_abstractor_client
+    
+## API
+
+[API Documentation](http://rubydoc.info/gems/ticket_abstractor_client/frames)
 
 ## Usage
 
