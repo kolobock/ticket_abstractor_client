@@ -37,9 +37,9 @@ Access clients:
 Grab issue:
 
     client.jira.get_issue 'IFS-123'
-    client.jira.get_issue_status 'IFS-123' => 'Open'
+    client.jira.get_issue_status 'IFS-123'
     
-Create issue (summary, description and issuetype fields are required):
+Create issue (project, summary, description and issuetype fields are required):
 
     options = { project: "IFS", summary: "Summary", description: "Desc", issuetype: "Bug"}
     client.jira.create_issue options
@@ -52,12 +52,12 @@ Create issue with an attachment:
     
 Update issue (issuekey field is required):
 
-    client.jira.update_issue({ issuekey: 'IFS-46728', description: 'new description' })
+    client.jira.update_issue(issuekey: 'IFS-123', description: 'new description')
     
 Attach the file to issue:
 
     attachment = File.new('file.png', 'rb')
-    client.jira.update_issue({ issuekey: 'IFS-46728' }, attachment)
+    client.jira.update_issue({ issuekey: 'IFS-123' }, attachment)
     
 ### Brouha
 
