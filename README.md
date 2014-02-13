@@ -24,6 +24,7 @@ Or install it yourself as:
 
 Initialize:
 
+    require 'ticket_abstractor_client'
     client = TicketAbstractorClient.initialize_client('http://ticket.abstractor.url')
 
 Access clients:
