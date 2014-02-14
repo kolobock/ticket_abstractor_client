@@ -1,6 +1,8 @@
 module TicketAbstractorClient
   def self.initialize_client(url)
     @url = url
+    @jira_client = @brouha_client = @itrc_client = nil
+
     self
   end
 
@@ -13,7 +15,7 @@ module TicketAbstractorClient
   end
 
   def self.itrc
-    @itrc ||= ItrcClient.new(@url)
+    @itrc_client ||= ItrcClient.new(@url)
   end
 end
 
