@@ -1,21 +1,22 @@
 module TicketAbstractorClient
-  def self.initialize_client(url)
+  def self.initialize_client(url, security_token=nil)
     @url = url
+    @security_token = security_token
     @jira_client = @brouha_client = @itrc_client = nil
 
     self
   end
 
   def self.jira
-    @jira_client ||= JiraClient.new(@url)
+    @jira_client ||= JiraClient.new(@url, @security_token)
   end
 
   def self.brouha
-    @brouha_client ||= BrouhaClient.new(@url)
+    @brouha_client ||= BrouhaClient.new(@url, @security_token)
   end
 
   def self.itrc
-    @itrc_client ||= ItrcClient.new(@url)
+    @itrc_client ||= ItrcClient.new(@url, @security_token)
   end
 end
 
