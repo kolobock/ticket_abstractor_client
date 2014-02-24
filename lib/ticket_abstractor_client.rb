@@ -1,5 +1,5 @@
 module TicketAbstractorClient
-  def self.initialize_client(url, security_token=nil)
+  def self.initialize_client(url, security_token = nil)
     @url = url
     @security_token = security_token
     @jira_client = @brouha_client = @itrc_client = nil
