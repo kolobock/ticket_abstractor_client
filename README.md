@@ -39,6 +39,7 @@ Access clients:
     client.jira
     client.brouha
     client.itrc
+    client.ilogger
 
 ### Jira
 
@@ -94,7 +95,13 @@ Find departments:
 
     client.itrc.list_departments
     client.itrc.find_department 4
-    
+
+### ILogger
+
+Grab incidents:
+
+    client.ilogger.get_incidents 'log_type:incident AND owner:brouha AND meta_incident_desk:psc NOT state:resolved', 100, 0
+
 
 ## Contributing
 

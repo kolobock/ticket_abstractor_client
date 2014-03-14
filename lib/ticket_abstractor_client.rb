@@ -2,7 +2,7 @@ module TicketAbstractorClient
   def self.initialize_client(url, security_token = nil)
     @url = url
     @security_token = security_token
-    @jira_client = @brouha_client = @itrc_client = nil
+    @jira_client = @brouha_client = @itrc_client = @ilogger_client = nil
 
     self
   end
@@ -18,6 +18,10 @@ module TicketAbstractorClient
   def self.itrc
     @itrc_client ||= ItrcClient.new(@url, @security_token)
   end
+
+  def self.ilogger
+    @ilogger_client ||= ILoggerClient.new(@url, @security_token)
+  end
 end
 
 require 'rest_client'
@@ -26,3 +30,4 @@ require 'ticket_abstractor_client/client'
 require 'ticket_abstractor_client/jira_client'
 require 'ticket_abstractor_client/brouha_client'
 require 'ticket_abstractor_client/itrc_client'
+require 'ticket_abstractor_client/i_logger_client'
