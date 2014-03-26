@@ -73,7 +73,23 @@ Attach the file to issue:
 Grab issue:
 
     client.brouha.get_issue '12'
-    
+
+Create issue:
+    options = {
+      severity: 'Severity 5',
+      title: 'incident title',
+      bridge: '123456789',
+      summary: 'incident description',
+      product: 'Xfinity Voice',
+      service: 'voicemail',
+      division: 'incident division',
+      desk: 'incident desk',
+      opened_by: 'incident manager',
+      start_time: 'incident start time'
+    }
+
+    client.brouha.create_issue options
+     
 ### iTRC
 
 Find apps:
