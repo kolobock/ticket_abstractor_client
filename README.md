@@ -75,6 +75,7 @@ Grab issue:
     client.brouha.get_issue '12'
 
 Create issue:
+
     options = {
       severity: 'Severity 5',
       title: 'incident title',
