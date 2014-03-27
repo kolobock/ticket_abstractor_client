@@ -90,7 +90,19 @@ Create issue:
     }
 
     client.brouha.create_issue options
-     
+
+List products:
+
+    client.brouha.list_products
+
+List services:
+
+    client.brouha.list_services
+
+List desks:
+
+    client.brouha.list_desks
+
 ### iTRC
 
 Find apps:
