@@ -67,7 +67,16 @@ Attach the file to issue:
 
     attachment = File.new('file.png', 'rb')
     client.jira.update_issue({ issuekey: 'IFS-123' }, attachment)
-    
+
+Create incident (project, summary, description and issuetype fields are required):
+
+    options = { project: "IFS", summary: "Summary", description: "Desc", issuetype: {id: "3"},
+      customfields: {
+        customfield_1: {id: "22"},
+        customfield_2: {value: "No Impact"}
+      }}
+    client.jira.create_tvx_issue options
+
 ### Brouha
 
 Grab issue:
@@ -91,6 +100,18 @@ Create issue:
 
     client.brouha.create_issue options
      
+List products:
+
+    client.brouha.list_products
+
+List services:
+
+    client.brouha.list_services
+
+List desks:
+
+    client.brouha.list_desks
+
 ### iTRC
 
 Find apps:
