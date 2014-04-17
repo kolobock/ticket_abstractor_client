@@ -130,7 +130,7 @@ Find departments:
 
 Grab incidents:
 
-    client.ilogger.get_incidents 'log_type:incident AND owner:brouha AND meta_incident_desk:psc NOT state:resolved', 100, 0
+    client.ilogger.get_incidents 'owner=brouha&incident_desk=ASD&limit=10&offset=0'
 
 
 ## Contributing
