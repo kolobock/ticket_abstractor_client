@@ -61,6 +61,10 @@ class TicketAbstractorClient::JiraClient < TicketAbstractorClient::Client
     post('jira/create_issue', { opts: opts }, attachments: attachments)
   end
 
+  def create_tvx_issue(opts = {})
+    post 'ticket/jira', opts
+  end
+
   def update_issue(opts = {}, *attachments)
     post('jira/update_issue', { opts: opts }, attachments: attachments)
   end

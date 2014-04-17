@@ -67,13 +67,43 @@ Attach the file to issue:
 
     attachment = File.new('file.png', 'rb')
     client.jira.update_issue({ issuekey: 'IFS-123' }, attachment)
-    
+
+Create incident (project, summary, description and issuetype fields are required):
+
+    options = { project: "IFS", summary: "Summary", description: "Desc", issuetype: {id: "3"},
+      customfields: {
+        customfield_1: {id: "22"},
+        customfield_2: {value: "No Impact"}
+      }}
+    client.jira.create_tvx_issue options
+
 ### Brouha
 
 Grab issue:
 
     client.brouha.get_issue '12'
-    
+
+Create issue:
+
+    options = {
+      severity: 'Severity 5',
+      title: 'incident title',
+      bridge: '123456789',
+      summary: 'incident description',
+      product: 'Xfinity Voice',
+      service: 'voicemail',
+      division: 'incident division',
+      desk: 'incident desk',
+      opened_by: 'incident manager',
+      start_time: 'incident start time'
+    }
+
+    client.brouha.create_issue options
+     
+List products and services:
+
+    client.brouha.list_product_services
+
 ### iTRC
 
 Find apps:

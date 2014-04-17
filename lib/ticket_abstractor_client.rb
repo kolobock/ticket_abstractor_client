@@ -24,6 +24,7 @@ module TicketAbstractorClient
   end
 end
 
+require 'json'
 require 'rest_client'
 require 'ticket_abstractor_client/version'
 require 'ticket_abstractor_client/client'
