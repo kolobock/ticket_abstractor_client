@@ -28,7 +28,7 @@ class TicketAbstractorClient::JiraClient < TicketAbstractorClient::Client
   end
 
   def get_issues_by_query(query)
-    get 'jira/get_issues_by_query', query: query
+    get 'jira_v1/get_issues_by_query', query
   end
 
   def get_users_by_query(query)
